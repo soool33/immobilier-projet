@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AccueilController!{% endblock %}
+
+{% block body %}
+<section class="container">
+	<div class="row tofs">
+	{% for bien in biens %}
+		<div class="col-4">
+		<a href="/maison/{{bien.id}}"><h2 class="text-center">{{bien.title}}  </h2> </a>
+
+
+
+		<img class="img-fluid" src="{{bien.picture}}" >
+
+
+
+		<h5 class="text-center">{{bien.surface}} m²  </h5>
+		</div>
+	{% endfor %}
+	</div>
+</section>
+
+{% endblock %}

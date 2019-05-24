@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AdminController!{% endblock %}
+
+{% block body %}
+
+<div class="container">
+<table class="table col-12">
+<tr>
+	<td>titre</td>
+	<td>prix</td>
+	<td>surface</td>
+	<td>photo</td>
+</tr>
+{% for bien in biens %}
+
+<tr>
+	<td>{{bien.title}}</td>
+	<td>{{bien.price}} $</td>
+	<td>{{bien.surface}} m²</td>
+	<td>{{bien.picture}}<img src="{{bien.picture}}"></td>
+	<td><a class="btn btn-primary" href="/admin/{{bien.id}}">modifier</a></td>
+	<td><a class="btn btn-primary" href="/delete/{{bien.id}}">supprimer</a></td>
+</tr>
+{% endfor %}
+</table>
+</div>
+{% endblock %}

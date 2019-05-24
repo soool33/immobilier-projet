@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ContactController!{% endblock %}
+
+{% block body %}
+<div class="container">
+	{{ form_start(form) }}
+	{{ form_widget(form.mail, {'attr':{'placeholder':'votre email...'}}) }}
+	{{ form_widget(form.subject, {'attr':{'placeholder':'sujet...'}}) }}
+	{{ form_widget(form.message, {'attr':{'placeholder':'votre message...'}}) }}
+	{{ form_end(form) }}
+</div>
+
+{% endblock %}
+

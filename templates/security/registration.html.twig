@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+	<h1 class="text-center"> inscription </h1>
+	<div class="container">
+		<form class="text-center">
+	{{ form_start(form) }}
+	<div class="form-group">
+		{{ form_widget(form.username, {'attr':{'placeholder': 'pseudo...'}}) }}
+	</div>
+	<div class="form-group">
+		{{ form_widget(form.email, {'attr':{'placeholder': 'e-mail...'}}) }}
+	</div>
+	<div class="form-group">
+		{{ form_widget(form.password, {'attr':{'placeholder': 'mot de passe...'}}) }}
+	</div>
+
+	<button type="submit" class="btn btn-success">valider</button>
+	{{ form_end(form) }}
+		</form>
+	</div>
+{% endblock %}

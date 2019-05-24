@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}
+        <link rel="stylesheet" type="text/css" href="{{ asset('bootstrap/css/bootstrap.css') }}">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        {% endblock %}
+         <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/formulaire">deposer</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/admin">admin</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="/inscription">Inscription</a>
+                    </li>
+                    {% if not app.user %}
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="{{ path('security_login') }}">Connexion</a>
+                    </li>
+                    {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="{{ path('security_logout') }}">Deconnexion</a>
+                    </li>
+                    {% endif %}
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="{{ path('contact') }}">contact</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </head>
+    <body>
+       
+        {% block body %}
+            
+        {% endblock %}
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>

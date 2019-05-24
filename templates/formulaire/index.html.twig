@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+{% block title %}Hello FormulaireController!{% endblock %}
+
+{% block integer_widget %}
+
+{% block body %}
+
+<h2 class="text-center"> deposez votre annonce </h2>
+	<div class="container">
+	{{ form_start(form) }}
+	{{ form_widget(form.title,{'attr':{'placeholder':'titre'}}) }}
+	{{ form_widget(form.picture,{'attr':{'placeholder':'picture'}}) }}
+	{{ form_widget(form.surface,{'attr':{'placeholder':'surface'}}) }}
+	{{ form_widget(form.price,{'attr':{'placeholder':'price'}}) }}
+	{{ form_end(form) }}
+	</div>
+{% endblock %}
+
+	{% endblock %}
